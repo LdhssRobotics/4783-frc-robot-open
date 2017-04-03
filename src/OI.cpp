@@ -1,6 +1,9 @@
 #include "OI.h"
 #include "WPILib.h"
 
+// Command includes
+#include "Commands/ToggleCamera.h"
+
 OI::OI() {
 	driveStick.reset(new Joystick(0));
 	shootStick.reset(new Joystick(1));
@@ -34,6 +37,8 @@ OI::OI() {
 		// Right bumper button reduces turn speed while held
 		// Y-axis of left joystick controls base speed
 		// X-axis of right joystick controls turn speed
+		// Toggle the camera feed between cam0 and cam1
+		aButtonD->ToggleWhenPressed(new ToggleCamera());
 
 	// Shoot stick controls
 }

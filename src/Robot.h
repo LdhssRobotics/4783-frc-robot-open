@@ -23,12 +23,15 @@
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Shooter.h"
 #include "Subsystems/UltrasonicSub.h"
+#include "Subsystems/Vision.h"
 #include "OI.h"
 
 // Autonomous mode includes
 #include "Commands/AutonomousModes/LeftAutoMode.h"
 #include "Commands/AutonomousModes/CentreAutoMode.h"
 #include "Commands/AutonomousModes/RightAutoMode.h"
+
+#include "Commands/ToggleCamera.h"
 
 using namespace std;
 using namespace frc;
@@ -45,6 +48,7 @@ public:
 	static shared_ptr<Drivetrain> drivetrain;
 	static shared_ptr<Shooter> shooter;
 	static shared_ptr<UltrasonicSub> ultrasonic;
+	static shared_ptr<Vision> vision;
 
 	LiveWindow *lw = LiveWindow::GetInstance();
 
